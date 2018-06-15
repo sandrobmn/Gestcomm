@@ -1,0 +1,44 @@
+2018-06-13T17:36:56+00:00 INFO (6): start: ["lanciaAssociazioneArticoliPN.php","op=associazioneArtPN","esercizio=2018","da_data=2018-06-13","a_data=2018-06-13","filtro=","^>","c:\\php\\pgmoutPN.txt"]
+2018-06-13T17:36:57+00:00 INFO (6): associaArtPN.php associazioneArtPN
+2018-06-13T17:36:57+00:00 INFO (6): associaArtPN.php {"0":"lanciaAssociazioneArticoliPN.php","op":"associazioneArtPN","esercizio":"2018","da_data":"2018-06-13","a_data":"2018-06-13","filtro":"","1":"^>","2":"c:\\php\\pgmoutPN.txt"}
+2018-06-13T17:36:57+00:00 INFO (6): associaArtPN:start associazioneArtPN(esercizio:2018 a:2018-06-13 da:2018-06-13 filtro:)
+2018-06-13T17:36:57+00:00 INFO (6): associazioneArtPN:c:/exacta/dati_exacta/serverth/dati/Produzione/avanzamento produzione.xlsx,2018,2018-06-13,2018-06-13,
+2018-06-13T17:37:09+00:00 INFO (6): associazioneArtPN:end caricaDaExcel(2018-06-13,2018-06-13): nrec=36,2018-06-13 17:37:09
+2018-06-13T17:37:09+00:00 INFO (6): associazioneArtPN:record:1 / 36 m:G1,pn:24110.012 data:2018-06-13 12:00:00 op:189
+2018-06-13T17:37:10+00:00 INFO (6): associazioneArtPN:record:2 / 36 m:G2,pn:355322 data:2018-06-13 12:00:00 op:139
+2018-06-13T17:37:11+00:00 INFO (6): associazioneArtPN:record:3 / 36 m:G3,pn:355066 data:2018-06-13 12:00:00 op:559
+2018-06-13T17:37:11+00:00 INFO (6): associazioneArtPN:record:4 / 36 m:G4,pn:355157 data:2018-06-13 12:00:00 op:19+32+86
+2018-06-13T17:37:11+00:00 INFO (6): associazioneArtPN:record:5 / 36 m:W6,pn:58493 data:2018-06-13 12:00:00 op:149
+2018-06-13T17:37:12+00:00 INFO (6): associazioneArtPN:record:6 / 36 m:W7,pn:52565 data:2018-06-13 12:00:00 op:51
+2018-06-13T17:37:12+00:00 INFO (6): associazioneArtPN:record:7 / 36 m:W8,pn:B155 data:2018-06-13 12:00:00 op:196
+2018-06-13T17:37:13+00:00 INFO (6): associazioneArtPN:record:8 / 36 m:W9,pn:53508 data:2018-06-13 12:00:00 op:112
+2018-06-13T17:37:14+00:00 INFO (6): associazioneArtPN:record:9 / 36 m:W10,pn:60808 data:2018-06-13 12:00:00 op:50
+2018-06-13T17:37:15+00:00 INFO (6): associazioneArtPN:record:10 / 36 m:D11,pn:211391 data:2018-06-13 12:00:00 op:205+257
+2018-06-13T17:37:16+00:00 INFO (6): associazioneArtPN:record:11 / 36 m:D12,pn:211391 data:2018-06-13 12:00:00 op:205+257
+2018-06-13T17:37:16+00:00 INFO (6): associazioneArtPN:record:12 / 36 m:D13,pn:145575 data:2018-06-13 12:00:00 op:218
+2018-06-13T17:37:16+00:00 INFO (6): associazioneArtPN:record:13 / 36 m:D14,pn:0907/6 data:2018-06-13 12:00:00 op:394
+2018-06-13T17:37:17+00:00 INFO (6): associazioneArtPN:record:14 / 36 m:D15,pn:25580005 data:2018-06-13 12:00:00 op:179
+2018-06-13T17:37:18+00:00 INFO (6): associazioneArtPN:record:15 / 36 m:D17,pn:58275 data:2018-06-13 12:00:00 op:204
+2018-06-13T17:37:19+00:00 INFO (6): associazioneArtPN:record:16 / 36 m:D18,pn:25510055 data:2018-06-13 12:00:00 op:176
+2018-06-13T17:37:19+00:00 INFO (6): associazioneArtPN:record:17 / 36 m:D19,pn:145574 data:2018-06-13 12:00:00 op:217
+2018-06-13T17:37:19+00:00 INFO (6): associazioneArtPN:record:18 / 36 m:D20,pn:5677-01 data:2018-06-13 12:00:00 op:163
+2018-06-13T17:37:20+00:00 INFO (6): associazioneArtPN:record:19 / 36 m:D21,pn:155181 data:2018-06-13 12:00:00 op:229
+2018-06-13T17:37:20+00:00 INFO (6): associazioneArtPN:record:20 / 36 m:D22,pn:350263 data:2018-06-13 12:00:00 op:56
+2018-06-13T17:37:21+00:00 INFO (6): associazioneArtPN:record:21 / 36 m:D23,pn:212712 data:2018-06-13 12:00:00 op:225
+2018-06-13T17:37:21+00:00 INFO (6): associazioneArtPN:record:22 / 36 m:D25,pn:4185-01 data:2018-06-13 12:00:00 op:161
+2018-06-13T17:37:22+00:00 INFO (6): associazioneArtPN:record:23 / 36 m:D26,pn:147892 data:2018-06-13 12:00:00 op:228
+2018-06-13T17:37:22+00:00 INFO (6): associazioneArtPN:record:24 / 36 m:D27,pn:25510056 data:2018-06-13 12:00:00 op:cp+177
+2018-06-13T17:37:22+00:00 INFO (6): associazioneArtPN:record:25 / 36 m:C37,pn:59418 data:2018-06-13 12:00:00 op:150
+2018-06-13T17:37:23+00:00 INFO (6): associazioneArtPN:record:26 / 36 m:C38,pn:0795-01 data:2018-06-13 12:00:00 op:99
+2018-06-13T17:37:23+00:00 INFO (6): associazioneArtPN:record:27 / 36 m:C39,pn:211440 data:2018-06-13 12:00:00 op:216
+2018-06-13T17:37:24+00:00 INFO (6): associazioneArtPN:record:28 / 36 m:C40,pn:370319 data:2018-06-13 12:00:00 op:144
+2018-06-13T17:37:24+00:00 INFO (6): associazioneArtPN:record:29 / 36 m:C41,pn:B270 data:2018-06-13 12:00:00 op:554
+2018-06-13T17:37:25+00:00 INFO (6): associazioneArtPN:record:30 / 36 m:C43,pn:WK25 22 data:2018-06-13 12:00:00 op:153
+2018-06-13T17:37:25+00:00 INFO (6): associazioneArtPN:record:31 / 36 m:C44,pn:3320062 data:2018-06-13 12:00:00 op:117
+2018-06-13T17:37:25+00:00 INFO (6): associazioneArtPN:record:32 / 36 m:C42T,pn:0549-091 data:2018-06-13 12:00:00 op:212
+2018-06-13T17:37:26+00:00 INFO (6): associazioneArtPN:record:33 / 36 m:C45,pn:59141 data:2018-06-13 12:00:00 op:222
+2018-06-13T17:37:26+00:00 INFO (6): associazioneArtPN:record:34 / 36 m:C46,pn:390059 data:2018-06-13 12:00:00 op:69
+2018-06-13T17:37:27+00:00 INFO (6): associazioneArtPN:record:35 / 36 m:C47,pn:WH25 005 data:2018-06-13 12:00:00 op:210
+2018-06-13T17:37:27+00:00 INFO (6): associazioneArtPN:record:36 / 36 m:C48,pn:WK007 data:2018-06-13 12:00:00 op:545
+2018-06-13T17:37:28+00:00 INFO (6): associaArtPN:end   associazioneArtPN:num_art:35
+2018-06-13T17:37:28+00:00 INFO (6): associaArtPN:fine:msg:ok

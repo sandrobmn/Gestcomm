@@ -1,0 +1,2 @@
+Criteri di selezione:date >= '2018-06-06'  and date <= '2018-06-13'  and (substr(product,1,11) <> 'AZZERAMENTO') and ((p.date || ' ' || substr('00' || cast(p.hour as text),-2,2)) >= substr(pc.order_start_date,1,13) and ((p.date || ' ' || substr('00' || cast(p.hour as text),-2,2))) <= substr(pc.order_end_date,1,13))
+Tipo di aggregazione:G

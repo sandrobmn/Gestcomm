@@ -1,0 +1,5 @@
+Criteri di selezione:date >= '2018-05-03'  and date <= '2018-05-10'  and (substr(product,1,11) <> 'AZZERAMENTO') and (p.date >= substr(pc.order_start_date,1,10) and p.date <= substr(pc.order_end_date,1,10))
+Tipo di aggregazione:G
+posizione	product	articolo	datehour	totalpieces
+37	B269	RSM B269	2018-05-09	283
+37	B269	RSM B269	2018-05-08	1200858

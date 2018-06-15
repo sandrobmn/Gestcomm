@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Gestione Avanzamento Produzione</title>
+<meta charset="utf-8">
+<meta name="description" content="Gestione Avanzamento Produzione"> <!--descrizione sintetica viualizzata nei motori di ricerca-->
+<meta name="keywords" content="">
+<meta name="robots" content="all"> <!--indica allo spider quali pagine indicizzare -->
+<meta name="rating" content="general"> <!--decrive il tipo di pubblico (general, mature, restricted, 14years, safe for kids) -->
+<meta http-equiv="expires" content="0"> <!--fa scaricare al browser sempre la copia aggiornata-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="css/style-3.css" type="text/css">
+<link rel="stylesheet" href="css/style-container-3.css" type="text/css">
+<!--
+<link href="http://fonts.googleapis.com/css?family=Bitter&subset=latin" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/nestedsidemenu.css" />
+-->
+</head>
+<body>
+	<div class="grid-container">
+			<div class="colonna0" >
+				<img class="menu-icon" src="img/back_01.png" onclick="var x = document.getElementById('colonna1');if (x.style.display === 'none') {   x.style.display = 'block'; $('.menu-icon').attr('src','img/back_01.png');} else {x.style.display = 'none'; $('.menu-icon').attr('src','img/forward_01.png');}"/>
+			<!--</div>-->
+			<div class="colonna1" id="colonna1">
+<div class="header">
+	<!--<div class="menu-trigger" style="float:left">
+		<button type="button" onclick="aprimenu()">Menu</button>
+	</div>-->
+	<div class="logo">
+		<img src="img/exacta-logo.png" />
+	</div>
+	<div class="title">
+	Gestione Avanzamento Produzione
+	</div>
+</div>
+<div style="clear:both;"></div>
+<div id="sidebar">
+		<div class="menu nestedsidemenu">
+			<!--<div class="closeButton"></div>-->			
+            <!--<div class="nestedsidemenu">
+                <br style="clear: left" />
+            </div>-->
+        </div>
+</div>
+<div class="menuButton"><!--<a class="icon-menu"></a>--></div>	
+</div>
+</div>
+<div class="colonna2">
+
+</div>
+</div>
+ 
+<!--<script src="script/jquery-1.12.4.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="script/jquery-1.9.1.js"></script>
+<script src="script/myScript.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('.menuButton').click(function()
+	{
+        $('#sidebar').animate({"left":"0px"}, 10);
+    });
+
+	$('.closeButton').click(function()
+	{
+        $('#sidebar').animate({"left":"-236px"}, 10);
+    });
+    	
+	costruisciMenu();
+
+
+});
+
+	
+function caricamento(){
+		//------chiudimenu();
+	};
+
+</script>
+	
+<script type='text/javascript'>
+
+jQuery( function($) {
+        $('tbody tr[data-href]').addClass('clickable').click( function() {
+            window.location = $(this).attr('data-href');
+        }).find('a').hover( function() {
+            $(this).parents('tr').unbind('click');
+        }, function() {
+            $(this).parents('tr').click( function() {
+                window.location = $(this).attr('data-href');
+            });
+        });
+});
+	
+</script>
+</body>
+</html>

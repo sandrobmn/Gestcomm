@@ -1,0 +1,123 @@
+/* stili gestcomm */
+html {
+	height: 95%;
+	width: 100%;
+    background-color:LightGoldenRodYellow;/*#ffd564;*/
+	font-family:Arial;
+     }
+
+/* definizioni menu orizzontale */	 
+.menu {
+	
+    background-color:orange;/*#ffd564;*/
+	display:block;
+	float:left;
+     }
+.menu ul {
+/*width:900px;*/ /* Dimensioni della barra del menu */
+padding:0;
+margin:0 auto;
+display:block;
+list-style-type:none; /* Stile della lista */
+}
+.menu li {
+display:inline;
+}
+menu a:hover {
+background:#007fff; /* Colore dello sfondo */
+}
+.CorpoLista {
+	
+    background-color:LightYellow;/*#ffd564;*/
+	display:block;
+	float:left;
+     }
+.menu a {
+color:#fff; /* Colore del testo */
+text-align:center; /* Testo allineato al centro */
+text-decoration:none; /* Nessuna decorazione */
+background:#909090; /* Colore dello sfondo */
+padding:3px 45px; /* Distanza tra le singole voci */
+border-right:2px solid #ffffff;
+}
+
+/* definizioni menu verticale */	 
+.menu ul {list-style-type:none; /* Nessuno stile applicato alla lista */
+margin: 2px;
+padding:0;
+}
+.menu li {
+border-bottom: 1px solid #696969;
+margin: 0px;
+padding: 0px;
+width: 140px;
+}
+.menu a {
+text-decoration:none; /* Nessuna decorazione */
+color:#fff; /* Colore Link */
+background:#909090; /* Colore sfondo */
+padding:3px; /* Distanza tra gli elementi */
+display: block;
+}
+.menu a:hover {background:#007fff; /* Sfondo */
+}
+
+
+.lista {
+	
+    /*background-color:white;*//*#ffd564;*/
+	
+     }
+
+.tabella {
+	
+    background-color:white;/*#ffd564;*/
+	
+     }
+
+.tabella thead {
+	
+    background-color:LightGrey;/*#ffd564;*/
+	
+     }
+
+/* Top menu */
+#centeredmenu ul {
+   margin:20px;
+   padding:0;
+   list-style:none;
+   float:right;
+   position:relative;
+   right:50%;
+}
+#centeredmenu ul li {
+   margin:0 0 0 30px;
+   padding:0;
+   float:left;
+   position:relative;
+   left:50%;
+   top:1px;
+}
+#centeredmenu ul li a {
+   display:block;
+   margin:0;
+   padding:.4em;
+   font-size:1em;
+   line-height:1em;
+   text-decoration:none;
+   color:#000cff;
+   font-weight:bold;
+   border-bottom:0px solid #000;
+}
+#centeredmenu ul li.active a {
+   color:#ff0000;
+}
+#centeredmenu ul li a:hover {
+   color:#ff0000;
+   border-bottom:0px solid #03f;
+}
+#centeredmenu ul li:hover a,
+#centeredmenu ul li.hover a { 
+   color:#ff0000;
+   border-bottom:0px solid #03f;
+   }

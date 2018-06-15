@@ -1,0 +1,599 @@
+<html>
+<head>
+<title>Lotti di Produzione</title>
+<meta charset="utf-8">
+<meta name="description" content="Gestione Avanzamento Produzione"> <!--descrizione sintetica viualizzata nei motori di ricerca-->
+<meta name="keywords" content="">
+<meta name="robots" content="all"> <!--indica allo spider quali pagine indicizzare -->
+<meta name="rating" content="general"> <!--decrive il tipo di pubblico (general, mature, restricted, 14years, safe for kids) -->
+<meta http-equiv="expires" content="0"> <!--fa scaricare al browser sempre la copia aggiornata-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="stylesheet" href="css/style-3.css" type="text/css">
+<link rel="stylesheet" href="css/style-container-3.css" type="text/css">
+
+<!--<link href="http://fonts.googleapis.com/css?family=Bitter&subset=latin" rel="stylesheet" type="text/css">-->
+<!--<link rel="stylesheet" href="css/nestedsidemenu.css" />-->
+
+<style>
+</style>
+</head>
+<body onload="caricamento()">
+	<div class="grid-container">
+		<div class="colonna0" >
+			<img class="menu-icon" src="img/back_01.png" onclick="var x = document.getElementById('colonna1');if (x.style.display === 'none') {   x.style.display = 'block'; $('.menu-icon').attr('src','img/back_01.png');} else {x.style.display = 'none'; $('.menu-icon').attr('src','img/forward_01.png');}"/>
+		<!--</div>-->
+		<div class="colonna1" id="colonna1">
+		<div class="header">
+		<!--<div class="menu-trigger" style="float:left">
+				<button type="button" onclick="aprichiudimenu()">Menu</button>
+			</div>-->
+		<div class="logo">
+		<img src="img/exacta-logo.png" />
+	</div>
+	<div class="title">
+	Gestione Avanzamento Produzione
+	</div>
+</div>
+<div style="clear:both;"></div>
+<!--<div class="funzioni">-->
+	<div id="sidebar">
+			<div class="menu nestedsidemenu">
+<!--				<div class="closeButton"></div>-->				
+				<!--<div class="nestedsidemenu">-->
+					<br style="clear: left" />
+				<!--</div>-->
+			</div>
+	</div>
+<!--		<div class="menuButton"></div>-->	
+	</div>
+	</div>
+    <div class="colonna2" id="main"  >
+        <div id="content">
+	<div class="corpoLista" id="corpoLista" >
+		<div class="corpoListaHeader">
+			Elenco Lotti di produzione
+		</div>
+		<form id="myForm" action="commesse.php" method="POST"> 
+				<div class="nav">
+						<input onclick="pagination('first')" id="exit" type="button" value="<<" />
+						<input onclick="pagination('prev')" id="exit" type="button" value="<" />
+						<span id="pagsup" type="text" name="pagsup" readonly="readonly" ></span>
+						<!--<span id="paginf" type="text" name="paginf" readonly="readonly" ></span>
+						<input id="pag" type="hidden" name="pag" readonly="readonly" value="1" />-->
+						<input onclick="pagination('next')" id="exit" type="button" value=">" />
+						<input onclick="pagination('last')" id="exit" type="button" value=">>" />
+					</div>
+					<div class="comandi">
+						<!--<button onclick="window.location.href='commessa.html'">Nuovo</button>-->
+						<div class=allinea>
+						<button onclick="invocaNuovo()">Nuovo</button>
+						</div>
+						<div class=allinea>
+						<button onclick="aggiornaLista()">Aggiorna</button>
+						</div>
+						<div class=allinea>
+						<button onclick="invocaFiltro()">Ricerca</button>
+						</div>
+						<!--<div class=allinea>
+						<button onclick="invocaAggiornamentoCommesse()">Aggiornamento Commesse</button>
+						</div>-->
+						<div class=allinea>
+						<a id="cmdReport" href="commesse.php?op=report&pag=1&npag=1&nrighe=1000&filtro=&ordinamento="><img src="img/excel.jpg" width="32px" height="32px" alt="Scarica Report Excel"/></a>
+						</div>
+					</div>
+					<div style="clear:both"></div>
+			<div class="lista">
+				<table  id='my_table' class='tabella' cellspacing='0' cellpadding='0'>
+				<thead>
+				<tr>
+				<th class="sorting" id="th_id_order" onclick="setOrdinamento('id_order')">ID Lotto</th>
+				<th class="sorting" id="th_descrizione" onclick="setOrdinamento('descrizione')">Descrizione</th>
+				<th class="sorting" id="th_data_inizio" onclick="setOrdinamento('data_inizio')">Data inizio</th>
+				<th class="sorting" id="th_data_fine" onclick="setOrdinamento('data_fine')">Data fine</th>
+				<th class="sorting" id="th_prodotto" onclick="setOrdinamento('prodotto')">Prodotto</th>
+				<th class="sorting" id="th_qta" onclick="setOrdinamento('qta')">Qta richiesta</th>
+				</tr>
+				</thead>
+					<tbody>
+					<!-- IL BODY E' INIZIALMENTE VUOTO -->
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<div class="nav">
+				<input onclick="pagination('first')" id="exit" type="button" value="<<" />
+				<input onclick="pagination('prev')" id="exit" type="button" value="<" />
+				<span id="paginf" type="text" name="paginf" readonly="readonly" ></span>
+				<input onclick="pagination('next')" id="exit" type="button" value=">" />
+				<input onclick="pagination('last')" id="exit" type="button" value=">>" />
+				<input id="pag" type="hidden" name="pag" readonly="readonly" value="1" />
+				<input id="op" type="hidden" name="op" value="list" />
+				<input id="nrighe" type="hidden" name="nrighe" value="10" />
+				<input onchange="impostaNpag()" id="npag" type="hidden" name="npag" value="0" />
+				<input id="ordinamento" type="hidden" name="ordinamento" value="" />
+			</div>
+			<div class="comandi">
+				<!--<button onclick="window.location.href='commessa.html'">Nuovo</button>-->
+				<div class=allinea>
+				<button onclick="invocaNuovo()">Nuovo</button>
+				</div>
+				<div class=allinea>
+				<button onclick="aggiornaLista()">Aggiorna</button>
+				</div>
+				<div class=allinea>
+                <button onclick="invocaFiltro()">Ricerca</button>
+				</div>
+				<!--<div class=allinea>
+                <button onclick="invocaAggiornamentoCommesse()">Aggiornamento Commesse</button>
+				</div>-->
+				<div class=allinea>
+				<a id="cmdReport" href="commesse.php?op=report&pag=1&npag=1&nrighe=1000&filtro=&ordinamento="><img src="img/excel.jpg" width="32px" height="32px" alt="Scarica Report Excel"/></a>
+				</div>
+			</div>
+			<div class="filtro">
+				<label id="opFiltroLabel">Filtro:</label>
+				<input id="valFiltro" type="text" name="filtro" readonly="readonly" value="" />
+            </div>
+			<!--<div class="comando2">
+				<input id="op2" type="hidden" name="op2" readonly="readonly" value="" />
+            </div>-->
+		</form>  
+		<div class="esito" >
+			<span id="resultmyForm"></span>
+		</div>
+	</div>
+<!-- filtro -->
+	<div class="corpoFiltro" id="corpoFiltro" style="display:none">
+		<div class="corpoFiltroHeader">
+		Criteri di ricerca Lotti di produzione  
+		</div>
+		<form id="myFormFiltro" > 
+			<div class="record">
+				<table>
+					<tr>
+                        <td>Codice Lotto</td>
+						<td><select class="operatore" type="text" name="id_order_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+						<td><input type="text" name="id_order" /></td>
+					</tr>
+					<tr>
+					<td>Descrizione</td>
+						<td><select class="operatore" type="text" name="descrizione_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="text" name="descrizione" /></td>
+					</tr>
+					<tr>
+					<td>Data inizio</td>
+						<td><select class="operatore" type="text" name="data_inizio_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="datetime-local" name="data_inizio" /></td>
+					</tr>
+					<tr>
+					<td>Data fine</td>
+						<td><select class="operatore" type="text" name="data_fine_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="datetime-local" name="data_fine" /></td>
+					</tr>
+					<tr>
+					<td>Prodotto</td>
+						<td><select class="operatore" type="text" name="prodotto_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="text" name="prodotto" /></td>
+					</tr>
+					<tr>
+					<td>Quantità</td>
+						<td><select class="operatore" type="text" name="qta_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="number" name="qta" /></td>
+					</tr>
+				</table>
+			</div>
+			<div class="comandi">
+				
+					<button onclick="aggiornaLista(aggiornaPrmFiltroExport(applicaFiltro()))">Applica</button>
+					<button onclick="chiudiFiltro()">Esci</button>
+					<button onClick="this.form.reset();" >Ripristina</button>
+				</div>
+
+		</form>  
+
+	</div>    
+<!-- -->    
+    <div class="corpoEdit" id="corpoEdit" style="display:none">
+		<div class="corpoEditHeader">
+			Lotto di produzione  
+		</div>
+		<form id="myFormEdit" action="commesse.php" method="POST"> 
+			<div class="record">
+				<table>
+					<tr>
+					<td>Codice Lotto</td><td><input type="text" name="id_order" /></td>
+					</tr>
+					<tr>
+					<td>Descrizione</td><td><input type="text" name="descrizione" /></td>
+					</tr>
+					<tr>
+						<td>Data inizio</td>
+						<td>
+							<input  type="text" name="data_inizio" />
+							<!--<input onchange="condizionaData('data_inizio_ISO')" type="datetime-local" name="data_inizio_ISO" />-->
+						</td>
+					</tr>
+					<tr>
+						<td>Data fine</td>
+						<td>
+							<input  type="text" name="data_fine" />
+							<!--<input onchange="condizionaData('data_fine_ISO')" type="datetime-local" name="data_fine_ISO" />-->
+						</td>
+					</tr>
+					<tr>
+					<td>Prodotto</td><td><input type="text" name="prodotto" /></td>
+					</tr>
+					<tr>
+					<td>Quantità</td><td><input type="number" name="qta" /></td>
+					</tr>
+				</table>
+				<!--<div style="display:none">
+				<input onchange="condizionaDataISO('data_inizio')" type="text" name="data_inizio" />
+				<input onchange="condizionaDataISO('data_fine')" type="text" name="data_fine" />
+				</div>-->
+	</div>
+			<div class="comandi">
+				<input id="submyFormEdit" type="submit" value="Invia" />
+				<button onclick="deleteRecord()">Elimina</button>
+				<button onclick="cambiaForm()">Esci</button>
+			</div>
+			<div class="modo">
+				<label id="opEditLabel">Modo:</label>
+				<input id="opEdit"  type="text" name="op" readonly="readonly" value="insert" />
+			</div>
+		</form>  
+		<div class="esito" >
+			<span id="resultmyFormEdit"></span>
+		</div>
+		<div class="corpoNascosto"style="display:none">
+			<form id="myFormHiddenCommesse" action="commesse.php" method="POST">
+				<input id="id_order" type="text" name="id_order" value="" />
+				<input id="op" type="hidden" name="op" value="get" />
+			</form>
+			<form id="myFormHiddenMxC" action="macchinexcommesse.php" method="POST">
+				<input id="id_order1" type="text" name="id_order" value="" />
+				<input id="valFiltro1" type="text" name="filtro" readonly="readonly" value="" />
+				<input type="hidden" name="nrighe" value="100" />
+				<input type="hidden" name="npag" value="1" />
+				<input type="hidden" name="pag" value="1" />
+				<input id="op1" type="hidden" name="op" value="list" />
+				<input id="ordinamento1" type="hidden" name="ordinamento" value="" />
+			</form>
+		</div>
+<!-- form commesse -->
+<div class="corpoLista" id="corpoLista1" >
+		<div class="corpoListaHeader">
+			Elenco Macchine per Lotto di Produzione
+		</div>
+		<form id="myFormMxC" action="macchinexcommesse.php.php" method="POST"> 
+			<div class="lista">
+				<table  id='my_table1' class='tabella' cellspacing='0' cellpadding='0'>
+				<thead>
+				<tr>
+				<th>Codice Lotto</th><th>Macchina</th><th>Part-number</th><th>Qtà da produrre</th><th>CNC program</th><th>Data inizio prevista</th><th>Data fine prevista</th>
+				</tr>
+				</thead>
+					<tbody>
+					<!-- IL BODY E' INIZIALMENTE VUOTO -->
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<div class="nav">
+			</div>
+			<div class="comandi">
+				<!--<button onclick="window.location.href='commessa.html'">Nuovo</button>-->
+				<div class=allinea>
+				<!--<button onclick="lanciaProduzione()">Lancia in Produzione</button>-->
+				</div>
+			</div>
+		</form>  
+		<div class="esito" >
+			<span id="resultmyFormOrdiniClienti"></span>
+		</div>
+	</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div style="clear:both"></div>
+<!--<script src="script/jquery-1.12.4.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="script/jquery-1.9.1.js"></script>
+<script src="script/myScript.js" type="text/javascript"></script>
+<script type="text/javascript" src="script/numberFormat154.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('.menuButton').click(function()
+	{
+        $('#sidebar').animate({"left":"0px"}, 10);
+    });
+
+	$('.closeButton').click(function()
+	{
+        $('#sidebar').animate({"left":"-236px"}, 10);
+	});
+
+
+
+});
+
+
+	elencoCampiLista_MxC= {
+		 "id_order" : {"caption":"Codice Lotto","tipo":"T","sort":""}, 
+		 "posizione":{"caption":"Posizione","tipo":"T","sort":""},
+		 "product" : {"caption":"Prodotto","tipo":"T","sort":""}, 
+		 "requested_pieces" : {"caption":"Quantità richiesta","tipo":"N","sort":""}, 
+		 "CNCprogram" : {"caption":"Programma","tipo":"T","sort":""}, 
+		 "planned_start_date" : {"caption":"Inizio previsto","tipo":"D","sort":""},
+		 "planned_end_date" : {"caption":"Fine prevista","tipo":"D","sort":""}, 
+				};
+
+	elencoCampiLista= {
+		 "id_order" : {"caption":"Codice Lotto","tipo":"T","sort":""}, 
+		 "descrizione" : {"caption":"Descrizione","tipo":"T","sort":""}, 
+		 "data_inizio":{"caption":"Inizio Previsto","tipo":"D","sort":""},
+		 "data_fine":{"caption":"Fine Prevista","tipo":"D","sort":""},
+		 "prodotto":{"caption":"Prodotto","tipo":"T","sort":""},
+		 "qta":{"caption":"Quantità","tipo":"N","sort":""}
+				};
+
+function apriChiudi(){
+	var x = document.getElementById('colonna1');
+	
+	
+	if (x.style.display === 'none') {
+		   x.style.display = 'block';
+		   $(".menu-icon").attr("src","img/back_01.png");
+	} else {
+		x.style.display = 'none';
+		$(".menu-icon").attr("src","img/forward_01.png");
+	}
+	
+}	
+
+function caricamento(){
+		//------chiudimenu();
+	};
+
+</script>
+	
+<script type='text/javascript'>
+
+function deleteRecord(){
+$("#opEdit").val("delete");
+	//richiestaDati("myFormEdit");
+	richiestaDatiExt("myFormEdit","myFormEdit",null,"del",null,null,null);
+
+}
+
+$("#sub").click( function() {
+	richiestaDati("myFormEdit");
+});
+ 
+$("#myForm").submit( function() {
+  return false;
+});
+
+
+$("#submyFormEdit").click( function() {
+	//richiestaDati("myFormEdit");
+	richiestaDatiExt("myFormEdit","myFormEdit",null,"update",null,null,null);
+});
+ 
+$("#myFormEdit").submit( function() {
+  return false;
+});
+
+
+$("#submyFormFiltro").click( function() {
+	return false;
+});
+ 
+$("#myFormFiltro").submit( function() {
+  return false;
+});
+
+
+function invocaEdit(id){
+	$("#id_order").val(id);
+	$("#opEdit").val("edit");
+	
+	cambiaForm();
+	//richiestaDati("myFormHiddenCommesse",operazioniAusiliarieEdit);
+	richiestaDatiExt("myFormHiddenCommesse","myFormEdit",null,"get",null,null,operazioniAusiliarieEdit);
+	
+};
+
+function invocaNuovo(){
+	$("#id_order").val("");
+	$("#opEdit").val("insert");
+	$("#myFormInsert").trigger("reset");
+	
+	cambiaForm();
+	//richiestaDati("myFormHiddenCommesse");
+	richiestaDatiExt("myFormHiddenCommesse","myFormEdit",null,"get",null,null,null);
+	
+};
+
+
+
+function aggiornaLista(){
+$("#my_table tbody tr:nth-child(n+1)").remove();
+$("#npag").val(0);
+	$("#op").val("list");
+	//richiestaDati("myForm");
+	richiestaDatiExt("myForm","myForm","my_table","list","invocaEdit",elencoCampiLista,impostaNpag);
+
+};
+function scaricaReport(){
+	$("#op").val("report");
+	//richiestaDati("myForm");
+	richiestaDatiExt("myForm","myForm",null,"report",null,null,null);
+};
+
+function operazioniAusiliarieEdit()
+{
+	id=$("#id_order").val();
+    console.log("operazioniAusiliarieEdit("+id+")");
+
+    var filtro="id_order='"+id+"'";
+    $("#valFiltro1").val(filtro);
+    $("#my_table1 tbody tr:nth-child(n+1)").remove();
+    $("#op1").val("list");
+	richiestaDati2K("myFormHiddenMxC",null,elencoCampiLista_MxC);
+    
+}    
+
+
+function invocaFiltro(){
+            $("#corpoFiltro").toggle();
+            $("#corpoLista").toggle();
+
+};
+
+function chiudiFiltro(){
+            $("#corpoFiltro").toggle();
+            $("#corpoLista").toggle();
+
+};
+
+function cambiaForm(){
+            $("#corpoEdit").toggle();
+            $("#corpoLista").toggle();
+
+};
+$(document).ready(function(){
+	
+	costruisciMenu();
+
+
+	aggiornaLista();
+});
+
+function richiestaDati2K(myFormName,myAction,callback){
+	if (callback && typeof callback === 'function') 
+		var elencoCampiLista = null;
+	else
+		 var elencoCampiLista = (typeof arguments[2] == 'undefined')?null:arguments[2];
+
+		 $.post( $("#"+myFormName).attr("action"),
+         $("#"+myFormName+" :input").serializeArray(),
+         function(risposta){
+			// $("#result").html(risposta);
+			 
+			 //var oper=document.getElementById("myForm");
+			 //alert(oper.value);
+			 //alert($("#myForm #pag").attr("name"));
+			 var info = $.parseJSON(risposta);
+			 $esito=info["esito"];
+			 $op=info["richiesta"];
+			 $dati=info["dati"];
+			 $pagina=info["pagina"];
+			 $pagine=info["pagine"];
+		 switch($op) {
+		 case "list":
+			 $("#pag").val($pagina);
+			 $("#npag").val($pagine);
+			 //var myAction="invocaEdit";
+			 var myFormList=myFormName.replace("Hidden", "");
+			 var myTableId=$( "#"+myFormList ).find( "table" ).attr("id");
+
+			 var myArr = $.parseJSON($dati);
+			 scorriRecord2K(myArr,myTableId,myAction,elencoCampiLista);
+			 break;
+		 case "get":
+			 var myArr = $.parseJSON($dati);
+			 scorriRecordGet(myArr,"myFormEdit");
+			break;
+		 default: 
+			 $("#result").html($dati);
+			clearInput(myFormName);
+		 }
+		 $("#result"+myFormName).html($esito);
+	
+		 });
+
+};	
+
+
+
+
+/*
+jQuery( function($) {
+        $('tbody tr[data-href]').addClass('clickable').click( function() {
+            $("#corpoEdit").toggle();
+            $("#corpoLista").toggle();
+        }).find('a').hover( function() {
+            $(this).parents('tr').unbind('click');
+        }, function() {
+            $(this).parents('tr').click( function() {
+                window.location = $(this).attr('data-href');
+            });
+        });
+});
+
+
+jQuery( function($) {
+        $('tbody tr[data-href]').addClass('clickable').click( function() {
+            window.location = $(this).attr('data-href');
+        }).find('a').hover( function() {
+            $(this).parents('tr').unbind('click');
+        }, function() {
+            $(this).parents('tr').click( function() {
+                window.location = $(this).attr('data-href');
+            });
+        });
+});
+*/
+</script>
+</body>
+</html>

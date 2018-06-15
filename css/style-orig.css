@@ -1,0 +1,259 @@
+/* stili gestcomm */
+body {
+	height: 95%;
+	width: 100%;
+    background-color:LightGoldenRodYellow;/*#ffd564;*/
+	font-family:Arial;
+     }
+
+/* definizioni menu orizzontale */	 
+
+
+/* definizioni menu verticale */	 
+.menu ul {list-style-type:none; /* Nessuno stile applicato alla lista */
+margin: 2px;
+padding:0;
+
+}
+.menu li {
+border-bottom: 1px solid #696969;
+margin: 0px;
+padding: 0px;
+width: 140px;
+}
+.menu a {
+text-decoration:none; /* Nessuna decorazione */
+color:#fff; /* Colore Link */
+background:#909090; /* Colore sfondo */
+padding:3px; /* Distanza tra gli elementi */
+display: block;
+}
+.menu a:hover {background:#007fff; /* Sfondo */
+}
+.header {
+	float:left;
+}
+
+.logo {
+	width:236px;
+	float:left;
+}
+
+.logo img{
+	float:left;
+}
+
+.title {
+	float:left;
+	font-size:xx-large;
+	font-weight:bold;
+	padding:30px;
+}
+
+.funzioni {
+	float:left;
+	
+}
+
+
+.menu {
+	width:236px;
+	/*margin-right:30px;*/
+	float:left;
+	height:100%;
+	background:lightgrey; /* Colore sfondo */
+}	
+
+.corpoLista {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+    background-color:white;/*#ffd564;*/
+	/*width:calc(100% - 236px);*/
+     }
+
+.corpoLista h1{
+	font-size:large;
+	float:left;
+ }
+.corpoListaHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+}
+
+.lista {
+	
+    background-color:white;/*#ffd564;*/
+	/*margin-left: 50px;
+	padding-left: 50px;*/	
+	
+     }
+
+.tabella {
+	
+    background-color:white;/*#ffd564;*/
+    
+     }
+
+.tabella thead {
+	
+    background-color:LightGrey;/*#ffd564;*/
+	
+     }
+
+.tabella thead th {
+padding: 5px;
+     }
+	 
+.tabella tbody td {
+padding: 5px;
+     }
+	 
+.nav {
+	margin-top:10px;
+	float:left;
+	    background-color:white;/*#ffd564;*/
+
+	}
+	
+.comandi {
+	margin-top:10px;
+	float:left;
+	    background-color:white;/*#ffd564;*/
+
+	}
+	
+.esito {
+	clear:both;
+	padding-bottom:10px;
+	padding-top:10px;
+	/*width:30px;*/
+}
+
+.filtro {
+	clear:both;
+	padding-bottom:10px;
+	padding-top:10px;
+	/*width:30px;*/
+}
+#valFiltro{
+	float:left;
+	display:block;
+	width:500px;
+    border-width: 0px;
+}		
+#opFiltroLabel{
+	float:left;
+	display:block;
+	width:50px;
+}		
+
+
+#pag{
+	
+	width:30px;
+}
+
+
+.modo {
+	clear:both;
+	padding-bottom:5px;
+	padding-top:5px;
+
+}		
+
+#opEditLabel{
+	float:left;
+	display:block;
+	width:50px;
+}		
+		
+#opEdit{
+	float:left;
+	display:block;
+	width:50px;
+    border-width: 0px;
+}		
+		
+.corpoEdit {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+	
+    background-color:white;/*#ffd564;*/
+
+     }
+.corpoEditHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+}
+
+.corpoEdit h1{
+	font-size:large;
+ }
+ 
+.corpoFiltro {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+	
+    background-color:white;/*#ffd564;*/
+
+     }
+.corpoFiltroHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+}
+ 
+.operatore {
+	width:80px;
+}
+ 
+
+.record {
+	
+    background-color:white;/*#ffd564;*/
+	
+
+     }
+
+.corpoInsert {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+	
+    background-color:white;/*#ffd564;*/
+
+     }
+	 
+.corpoInsertHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+}
+
+
+#opInsertLabel{
+	float:left;
+	display:block;
+	width:50px;
+}		
+		
+#opInsert{
+	float:left;
+	display:block;
+	width:50px;
+}
+
+.allinea { 
+	float:left; 
+	margin-left:5px; 
+}
+

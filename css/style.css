@@ -1,0 +1,398 @@
+/* stili gestcomm */
+body {
+	height: 95%;
+	width: 100%;
+    background-color:#fbb900;/*LightGoldenRodYellow;/*#ffd564;*/
+	font-family:Arial;
+     }
+
+/* definizioni menu a scomparsa */
+.closeButton {
+	background-image: url("../img/cancel-button.png");
+	background-repeat: no-repeat;
+	background-position: 200px center;
+	background-size: 32px;
+
+    cursor: pointer;
+    /*left: 200px;*/
+    /*position: fixed;*/
+    /*top: 90px;*/
+	width: 100%;/*56px;*/
+	height: 32px;
+    z-index: 99;
+}
+
+.menuButton {
+	background-image: url("../img/menu.png");
+	background-repeat: no-repeat;
+	background-size: 28px;
+
+	cursor: pointer;
+    height: 56px;
+    left: 8px;
+    position: fixed;
+    top: 105px;
+    width: 56px;
+    z-index: 99;
+}	
+
+/* definizioni menu orizzontale */	 
+
+
+/* definizioni menu verticale */	 
+.menu ul {list-style-type:none; /* Nessuno stile applicato alla lista */
+margin: 2px;
+padding:0;
+
+}
+.menu li {
+border-bottom: 1px solid #696969;
+margin: 0px;
+padding: 0px;
+width: 140px;
+}
+.menu a {
+text-decoration:none; /* Nessuna decorazione */
+color:#fff; /* Colore Link */
+background:#909090; /* Colore sfondo */
+padding:3px; /* Distanza tra gli elementi */
+display: block;
+}
+.menu a:hover {background:#007fff; /* Sfondo */
+}
+.header {
+	float:left;
+}
+
+.logo {
+	width:236px;
+	float:left;
+}
+
+.logo img{
+	float:left;
+}
+
+.title {
+	float:left;
+	font-size:xx-large;
+	font-weight:bold;
+	padding:30px;
+}
+
+.funzioni {
+	float:left;
+	
+}
+
+
+.menu {
+	width:236px;
+	/*margin-right:30px;*/
+	float:left;
+	/*--height:100%;*/
+	background:lightgrey; /* Colore sfondo */
+}	
+
+.corpoLista {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+    background-color:white;/*#ffd564;*/
+	/*width:calc(100% - 236px);*/
+     }
+
+.corpoLista h1{
+	font-size:large;
+	float:left;
+ }
+.corpoListaHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+	text-align: center;
+}
+
+.lista {
+	
+    background-color:white;/*#ffd564;*/
+	/*margin-left: 50px;
+	padding-left: 50px;*/	
+	overflow-x:auto;
+     }
+
+.tabella {
+	
+    background-color:white;/*#ffd564;*/
+    border-color:lightgrey;
+	border-collapse: collapse;
+	cursor: pointer;
+     }
+.tabella tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}	
+.tabella thead {
+	
+    background-color:LightGrey;/*#ffd564;*/
+	
+	
+     }
+
+.tabella thead th {
+padding: 5px;
+     }
+	 
+.tabella tbody td {
+padding: 5px;
+     }
+.cellanumerica tbody td {
+	text-align: right;
+	width:60px;
+}	 
+.tabella tr:hover {
+	background-color: #909090;
+	}
+	
+.nav {
+	margin-top:10px;
+	float:left;
+	    background-color:white;/*#ffd564;*/
+
+	}
+#pag{
+	width:40px;
+	}
+		
+.comandi {
+	margin-top:10px;
+	float:left;
+	    background-color:white;/*#ffd564;*/
+
+	}
+	
+.esito {
+	clear:both;
+	padding-bottom:10px;
+	padding-top:10px;
+	/*width:30px;*/
+}
+
+.filtro {
+	clear:both;
+	padding-bottom:10px;
+	padding-top:10px;
+	/*width:30px;*/
+}
+#valFiltro{
+	float:left;
+	display:block;
+	width:500px;
+    border-width: 0px;
+}		
+#opFiltroLabel{
+	float:left;
+	display:block;
+	width:50px;
+}		
+
+
+
+.modo {
+	clear:both;
+	padding-bottom:5px;
+	padding-top:5px;
+
+}		
+
+#opEditLabel{
+	float:left;
+	display:block;
+	width:50px;
+}		
+		
+#opEdit{
+	float:left;
+	display:block;
+	width:150px;
+    border-width: 0px;
+}		
+		
+.corpoEdit {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+	
+    background-color:white;/*#ffd564;*/
+
+     }
+.corpoEditHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+	text-align: center;
+}
+
+.corpoEdit h1{
+	font-size:large;
+ }
+ 
+.corpoFiltro {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+	
+    background-color:white;/*#ffd564;*/
+
+     }
+.corpoFiltroHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+	text-align: center;
+}
+ 
+.operatore {
+	width:80px;
+}
+ 
+
+.record {
+	
+    background-color:white;/*#ffd564;*/
+	
+
+     }
+
+.corpoInsert {
+	float:left;
+	padding-left:30px;
+	padding-right:30px;
+	
+    background-color:white;/*#ffd564;*/
+
+     }
+	 
+.corpoInsertHeader {
+	clear:both;
+	padding-bottom:20px;
+	font-size:x-large;
+	font-weight:bold;
+	text-align: center;
+}
+
+
+#opInsertLabel{
+	float:left;
+	display:block;
+	width:50px;
+}		
+		
+#opInsert{
+	float:left;
+	display:block;
+	width:50px;
+}
+
+
+.allinea { 
+	float:left; 
+	margin-left:5px; 
+}
+
+	 
+	 #opCNCLabel{
+		float:left;
+		display:block;
+		width:50px;
+	}		
+			
+	#opCNC{
+		float:left;
+		display:block;
+		width:150px;
+		border-width: 0px;
+	}		
+			
+	.corpoCNC {
+		float:left;
+		padding-left:30px;
+		padding-right:30px;
+		/*padding-bottom:10px;
+		margin-top:10px;*/
+			
+		background-color:lightgray;/*#ffd564;*/
+	
+		 }
+	.corpoCNCHeader {
+		clear:both;
+		padding-bottom:20px;
+		font-size:x-large;
+		font-weight:bold;
+		text-align: center;
+	}
+	
+	.corpoCNC h1{
+		font-size:large;
+	 }
+	 
+	 #opTOFSLabel{
+		float:left;
+		display:block;
+		width:50px;
+	}		
+			
+	#opTOFS{
+		float:left;
+		display:block;
+		width:150px;
+		border-width: 0px;
+	}		
+			
+	.corpoTOFS {
+		float:left;
+		padding-left:30px;
+		padding-right:30px;
+		/*padding-bottom:10px;
+		margin-top:10px;*/
+			
+		background-color:lightgray;/*#ffd564;*/
+	
+		 }
+	.corpoTOFSHeader {
+		clear:both;
+		padding-bottom:20px;
+		font-size:x-large;
+		font-weight:bold;
+		text-align: center;
+	}
+	
+	.corpoTOFS h1{
+		font-size:large;
+	 }
+
+	 .pdffile {
+		width:1200px;
+		height: 600px;
+	}
+	.pdffile object{
+		width:100%;
+		height: 100%;
+	}
+
+	.meter_misure {
+		background: lightgrey;
+		width: 300px;
+	}
+	.meter_misure:-webkit-meter-optimum::-webkit-meter-bar {
+		background:indianred;
+	}
+	.meter_misure:-webkit-meter-sub-optimum::-webkit-meter-bar {
+		background: antiquewhite;
+	}
+	.meter_misure:-webkit-meter-sub-sub-optimum::-webkit-meter-bar {
+		background: steelblue;
+	}

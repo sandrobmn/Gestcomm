@@ -1,0 +1,33 @@
+2018-06-13T17:40:34+00:00 INFO (6): start: ["lanciaAvanzamentoPLURI.php","op=avanzamentoNC","esercizio=2018","da_data=2018-06-13","a_data=2018-06-13","filtro=","^>","c:\\php\\pgmoutPLURI.txt"]
+2018-06-13T17:40:34+00:00 INFO (6): avanzamentoPLURI.php avanzamentoNC
+2018-06-13T17:40:34+00:00 INFO (6): avanzamentoPLURI.php {"0":"lanciaAvanzamentoPLURI.php","op":"avanzamentoNC","esercizio":"2018","da_data":"2018-06-13","a_data":"2018-06-13","filtro":"","1":"^>","2":"c:\\php\\pgmoutPLURI.txt"}
+2018-06-13T17:40:34+00:00 INFO (6): avanzamentoNC:start avanzamentoNC(esercizio:2018 a:2018-06-13 da:2018-06-13 filtro:
+2018-06-13T17:40:34+00:00 INFO (6): avanzamentoNC:c:/exacta/dati_exacta/serverth/dati/Produzione/avanzamento produzione.xlsx,2018,2018-06-13,2018-06-13,
+2018-06-13T17:40:46+00:00 INFO (6): avanzamentoNC:caricaDaExcel(2018-06-13,2018-06-13): nrec=26,2018-06-13 17:40:46
+2018-06-13T17:40:46+00:00 INFO (6): avanzamentoNC:record:1 / 26 m:01,pn:24110.012 data:2018-06-13 12:00:00
+2018-06-13T17:40:46+00:00 INFO (6): avanzamentoNC:record:2 / 26 m:02,pn:355322 data:2018-06-13 12:00:00
+2018-06-13T17:40:46+00:00 INFO (6): avanzamentoNC:record:3 / 26 m:03,pn:355066 data:2018-06-13 12:00:00
+2018-06-13T17:40:46+00:00 INFO (6): avanzamentoNC:record:4 / 26 m:04,pn:355157 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:5 / 26 m:06,pn:58493 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:6 / 26 m:07,pn:52565 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:7 / 26 m:08,pn:B155 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:8 / 26 m:09,pn:53508 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:9 / 26 m:10,pn:60808 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:10 / 26 m:11,pn:211391 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:11 / 26 m:12,pn:211391 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:12 / 26 m:13,pn:145575 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:13 / 26 m:14,pn:0907/6 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:14 / 26 m:15,pn:25580005 data:2018-06-13 12:00:00
+2018-06-13T17:40:47+00:00 INFO (6): avanzamentoNC:record:15 / 26 m:17,pn:58275 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:16 / 26 m:18,pn:25510055 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:17 / 26 m:19,pn:145574 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:18 / 26 m:20,pn:5677-01 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:19 / 26 m:21,pn:155181 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:20 / 26 m:22,pn:350263 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:21 / 26 m:23,pn:212712 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:22 / 26 m:25,pn:4185-01 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:23 / 26 m:26,pn:147892 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:24 / 26 m:27,pn:25510056 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:25 / 26 m:39,pn:211440 data:2018-06-13 12:00:00
+2018-06-13T17:40:48+00:00 INFO (6): avanzamentoNC:record:26 / 26 m:48,pn:WK007 data:2018-06-13 12:00:00
+2018-06-13T17:40:49+00:00 INFO (6): avanzamentoNC:end avanzamentoNC:num:26

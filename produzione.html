@@ -1,0 +1,445 @@
+<html>
+<head>
+<title>Produzione totale per OP</title>
+<meta charset="utf-8">
+<meta name="description" content="Gestione Avanzamento Produzione"> <!--descrizione sintetica viualizzata nei motori di ricerca-->
+<meta name="keywords" content="">
+<meta name="robots" content="all"> <!--indica allo spider quali pagine indicizzare -->
+<meta name="rating" content="general"> <!--decrive il tipo di pubblico (general, mature, restricted, 14years, safe for kids) -->
+<meta http-equiv="expires" content="0"> <!--fa scaricare al browser sempre la copia aggiornata-->
+<link rel="stylesheet" href="css/style-3.css" type="text/css">
+<link rel="stylesheet" href="css/style-container-3.css" type="text/css">
+<!--
+<link href="http://fonts.googleapis.com/css?family=Bitter&subset=latin" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/nestedsidemenu.css" />
+-->
+</head>
+<body>
+	<div class="grid-container">
+			<div class="colonna0" >
+				<img class="menu-icon" src="img/back_01.png" onclick="var x = document.getElementById('colonna1');if (x.style.display === 'none') {   x.style.display = 'block'; $('.menu-icon').attr('src','img/back_01.png');} else {x.style.display = 'none'; $('.menu-icon').attr('src','img/forward_01.png');}"/>
+			<!--</div>-->
+			<div class="colonna1" id="colonna1">
+<div class="header">
+	<div class="logo">
+		<img src="img/exacta-logo.png" />
+	</div>
+	<div class="title">
+	Gestione Avanzamento Produzione
+	</div>
+</div>
+<div style="clear:both;"></div>
+<!--<div class="funzioni">-->
+	<div id="sidebar">
+			<div class="menu nestedsidemenu">
+				<!--<div class="closeButton"></div>				
+				<div class="nestedsidemenu">
+					<br style="clear: left" />
+				</div>-->
+			</div>
+	</div>
+				<!--<div class="menuButton"></div>-->
+			</div>	
+			</div>
+			<div class="colonna2" id="main">
+        <div id="content">
+	<div class="corpoLista" id="corpoLista" >
+		<div class="corpoListaHeader">
+			Produzione totale per OP
+		</div>
+		<form id="myForm" action="produzione.php" method="POST"> 
+			<div class="nav">
+					<input onclick="pagination('first')" id="exit" type="button" value="<<" />
+					<input onclick="pagination('prev')" id="exit" type="button" value="<" />
+					<span id="pagsup" type="text" name="pagsup" readonly="readonly" ></span>
+					<input onclick="pagination('next')" id="exit" type="button" value=">" />
+					<input onclick="pagination('last')" id="exit" type="button" value=">>" />
+				</div>
+				<div class="comandi">
+						<div class="allinea">
+						<button onclick="aggiornaLista()">Aggiorna</button>
+						</div>
+						<div class="allinea">
+						<button onclick="invocaFiltro()">Ricerca</button>
+						</div>
+						<div class="allinea">
+						<a id="cmdReport" href="produzione.php?op=report&pag=1&npag=1&nrighe=1000&filtro=&ordinamento="><img src="img/excel.jpg" width="32px" height="32px" alt="Scarica Report Excel"/></a>
+						</div>
+					</div>
+					<div class="lista">
+				<table  id='my_table' class='tabella' cellspacing='0' cellpadding='0'>
+				<thead>
+				<tr>
+				<th class="sorting" id="th_id_order" onclick="setOrdinamento('id_order')">ID Lotto</th>
+				<th class="sorting" id="th_posizione" onclick="setOrdinamento('posizione')">Posizione</th>
+				<!--<th class="sorting" id="th_planned_start_date" onclick="setOrdinamento('planned_start_date')">Data inizio prevista</th>
+				<th class="sorting" id="th_planned_end_date" onclick="setOrdinamento('planned_end_date')">Data fine prevista</th>
+				--><th class="sorting" id="th_product" onclick="setOrdinamento('product')">Prodotto</th>
+				<th class="sorting" id="th_requested_pieces" onclick="setOrdinamento('requested_pieces')">Qta richiesta</th>
+				<th class="sorting" id="th_mind" onclick="setOrdinamento('mind')">Data inizio</th>
+				<th class="sorting" id="th_maxd" onclick="setOrdinamento('maxd')">Data fine</th>
+				<th class="sorting" id="th_CNCprogram" onclick="setOrdinamento('CNCprogram')">Programma</th>
+				<th class="sorting" id="th_totprod" onclick="setOrdinamento('totprod')">Qta prodotta</th>
+				</tr>
+				</thead>
+					<tbody>
+					<!-- IL BODY E' INIZIALMENTE VUOTO -->
+					</tbody>
+				</table>
+			</div>
+			<br/>
+			<div class="nav">
+				<input onclick="pagination('first')" id="exit" type="button" value="<<" />
+				<input onclick="pagination('prev')" id="exit" type="button" value="<" />
+				<span id="paginf" type="text" name="paginf" readonly="readonly" ></span>
+					<input id="pag" type="hidden" name="pag" readonly="readonly" value="1" />
+					<input onclick="pagination('next')" id="exit" type="button" value=">" />
+				<input onclick="pagination('last')" id="exit" type="button" value=">>" />
+				<input id="op" type="hidden" name="op" value="list" />
+				<input id="nrighe" type="hidden" name="nrighe" value="10" />
+				<input id="npag" type="hidden" name="npag" value="0" />
+				<input id="ordinamento" type="hidden" name="ordinamento" value="" />
+			</div>
+			<div class="comandi">
+				<div class="allinea">
+				<button onclick="aggiornaLista()">Aggiorna</button>
+				</div>
+				<div class="allinea">
+                <button onclick="invocaFiltro()">Ricerca</button>
+				</div>
+				<div class="allinea">
+				<a id="cmdReport" href="produzione.php?op=report&pag=1&npag=1&nrighe=1000&filtro=&ordinamento="><img src="img/excel.jpg" width="32px" height="32px" alt="Scarica Report Excel"/></a>
+				</div>
+			</div>
+			<div class="filtro">
+				<label id="opFiltroLabel">Filtro:</label>
+				<input id="valFiltro" type="text" name="filtro" readonly="readonly" value="" />
+            </div>
+		</form>  
+		<div class="esito" >
+			<span id="resultmyForm"></span>
+		</div>
+	</div>
+<!-- filtro -->
+	<div class="corpoFiltro" id="corpoFiltro" style="display:none">
+		<div class="corpoFiltroHeader">
+		Criteri di ricerca Produzione  
+		</div>
+		<form id="myFormFiltro" > 
+			<div class="record">
+				<table>
+					<tr>
+                        <td>Codice Lotto</td>
+						<td><select class="operatore" type="text" name="id_order_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+						<td><input type="text" name="id_order" /></td>
+					</tr>
+					<tr>
+							<td>Prodotto</td>
+								<td><select class="operatore" type="text" name="product_oper">
+								<option value="=">=</option>
+								<option value=">">></option>
+								<option value="<"><</option>
+								<option value=">=">>=</option>
+								<option value="<="><=</option>
+								<option value="<>"><></option>
+								<option value="like">like</option>
+								</select></td>
+							<td><input type="text" name="product" /></td>
+							</tr>
+							<tr>
+							<td>Macchina</td>
+								<td><select class="operatore" type="text" name="posizione_oper">
+								<option value="=">=</option>
+								<option value=">">></option>
+								<option value="<"><</option>
+								<option value=">=">>=</option>
+								<option value="<="><=</option>
+								<option value="<>"><></option>
+								<option value="like">like</option>
+								</select></td>
+							<td><input type="text" name="posizione" /></td>
+							</tr>
+							<!--
+					<tr>
+					<td>Descrizione</td>
+						<td><select class="operatore" type="text" name="descrizione_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						</select></td>
+					<td><input type="text" name="descrizione" /></td>
+					</tr>
+					-->
+					<tr>
+					<td>Data inizio prevista</td>
+						<td><select class="operatore" type="text" name="planned_start_date_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="text" name="planned_start_date" /></td>
+					</tr>
+					<tr>
+					<td>Data fine prevista</td>
+						<td><select class="operatore" type="text" name="planned_end_date_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="text" name="planned_end_date" /></td>
+					</tr>
+					<!--
+					<tr>
+					<td>Data inizio effettiva</td>
+						<td><select class="operatore" type="text" name="mind_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						</select></td>
+					<td><input type="text" name="mind" /></td>
+					</tr>
+					<tr>
+					<td>Data fine effettiva</td>
+						<td><select class="operatore" type="text" name="maxd_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						</select></td>
+					<td><input type="text" name="maxd" /></td>
+					</tr>
+					
+					<tr>
+					<td>Programma</td>
+						<td><select class="operatore" type="text" name="CNCprogram_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						<option value="like">like</option>
+						</select></td>
+					<td><input type="text" name="CNCprogram" /></td>
+					</tr>
+					
+					<tr>
+					<td>Quantità prodotta</td>
+						<td><select class="operatore" type="text" name="totprod_oper">
+						<option value="=">=</option>
+						<option value=">">></option>
+						<option value="<"><</option>
+						<option value=">=">>=</option>
+						<option value="<="><=</option>
+						<option value="<>"><></option>
+						</select></td>
+					<td><input type="number" name="totprod" /></td>
+					</tr>
+					-->
+				</table>
+			</div>
+			<div class="comandi">
+				
+					<button onclick="aggiornaLista(aggiornaPrmFiltroExport(applicaFiltro()))">Applica</button>
+					<button onclick="chiudiFiltro()">Esci</button>
+					<button onClick="this.form.reset();" >Ripristina</button>
+				</div>
+
+		</form>  
+
+	</div>    
+<!-- -->    
+	</div>    
+	</div>    
+</div>
+<!--<script src="script/jquery-1.12.4.min.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="script/jquery-1.9.1.js"></script>
+<script src="script/myScript.js" type="text/javascript"></script>
+<script type="text/javascript" src="script/numberFormat154.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('.menuButton').click(function()
+		{
+			$('#sidebar').animate({"left":"0px"}, 10);
+		});
+	
+		$('.closeButton').click(function()
+		{
+			$('#sidebar').animate({"left":"-236px"}, 10);
+		});
+	
+		costruisciMenu();
+
+});
+	
+	/* var 	$campiElenco="mc.id_order,m.posizione,mc.planned_start_date, mc.planned_end_date, mc.product, mc.requested_pieces,  
+	min(p.order_start_date) as mind, max(p.order_end_date) as maxd, mc.CNCprogram, 
+	sum( (p.total_pieces - p.order_start_pieces)) as totprod"; */
+	elencoCampiLista= {
+					"id_order":{"caption":"Codice Lotto","tipo":"T","sort":""},
+					"posizione" : {"caption":"Posizione","tipo":"T","sort":""}, 
+					// "planned_start_date" : {"caption":"Data Inizio","tipo":"T","sort":""}, 
+					// "planned_end_date" : {"caption":"Data Fine","tipo":"T","sort":""}, 
+					 "product" : {"caption":"Prodotto","tipo":"T","sort":""}, 
+					 "requested_pieces" :{"caption": "Qta richiesta","tipo":"N","sort":""}, 
+					 "mind" : {"caption":"Data inizio eff","tipo":"D","sort":""}, 
+					 "maxd" : {"caption":"Data fine eff","tipo":"D","sort":""}, 
+					 "CNCprogram" : {"caption":"Programma","tipo":"T","sort":""}, 
+					 "totprod" : {"caption":"Qta prodotta","tipo":"N","sort":""} 
+				};
+
+		
+	function caricamento(){
+			//------chiudimenu();
+		};
+	
+	</script>
+		
+	
+<script type='text/javascript'>
+
+function deleteRecord(){
+$("#opEdit").val("delete");
+	richiestaDati("myFormEdit");
+
+}
+
+
+
+$("#sub").click( function() {
+	richiestaDati("myFormEdit");
+});
+ 
+$("#myForm").submit( function() {
+  return false;
+});
+
+
+$("#submyFormEdit").click( function() {
+	richiestaDati("myFormEdit");
+});
+ 
+$("#myFormEdit").submit( function() {
+  return false;
+});
+
+
+$("#submyFormFiltro").click( function() {
+	return false;
+});
+ 
+$("#myFormFiltro").submit( function() {
+  return false;
+});
+
+function aggiornaLista(){
+$("#my_table tbody tr:nth-child(n+1)").remove();
+$("#npag").val(0);
+	$("#op").val("list");
+	richiestaDati("myForm",elencoCampiLista,impostaNpag);
+};
+
+function invocaEdit(id){
+
+	return false;
+	
+	$("#id_order").val(id);
+	$("#opEdit").val("edit");
+	
+	cambiaForm();
+	richiestaDati("myFormHiddenCommesse");
+	
+};
+
+function invocaNuovo(){
+	$("#id_order").val("");
+	$("#opEdit").val("insert");
+	
+	cambiaForm();
+	richiestaDati("myFormHiddenCommesse");
+	
+};
+
+function scaricaReport(){
+	$("#op").val("report");
+	richiestaDati("myForm",elencoCampiLista);
+};
+
+
+
+
+function invocaFiltro(){
+            $("#corpoFiltro").toggle();
+            $("#corpoLista").toggle();
+
+};
+
+function chiudiFiltro(){
+            $("#corpoFiltro").toggle();
+            $("#corpoLista").toggle();
+
+};
+
+function cambiaForm(){
+            $("#corpoEdit").toggle();
+            $("#corpoLista").toggle();
+
+};
+$(document).ready(function(){
+	aggiornaLista();
+});
+/*
+jQuery( function($) {
+        $('tbody tr[data-href]').addClass('clickable').click( function() {
+            $("#corpoEdit").toggle();
+            $("#corpoLista").toggle();
+        }).find('a').hover( function() {
+            $(this).parents('tr').unbind('click');
+        }, function() {
+            $(this).parents('tr').click( function() {
+                window.location = $(this).attr('data-href');
+            });
+        });
+});
+
+
+jQuery( function($) {
+        $('tbody tr[data-href]').addClass('clickable').click( function() {
+            window.location = $(this).attr('data-href');
+        }).find('a').hover( function() {
+            $(this).parents('tr').unbind('click');
+        }, function() {
+            $(this).parents('tr').click( function() {
+                window.location = $(this).attr('data-href');
+            });
+        });
+});
+*/
+</script>
+</body>
+</html>
